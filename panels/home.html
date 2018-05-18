@@ -1,0 +1,104 @@
+<div id=page__ID>
+	<div class="container-fluid" style='max-width:1200px'>
+		<h1>Research projects</h1>
+		<br>
+		<div class=project__ID>
+			<span class=title__ID>Can we monitor asthma at home using a novel breathing test?</span>
+			<br><span class=type__ID>RESPIRATORY RESEARCH</span>
+			<br><button class="btn btn-secondary open__ID">View Details</button>
+			<div class=content__ID style='display:none'>
+				VmInclude:__CURRENT_PATH__project-01.html
+			</div>
+		</div>
+		<div class=project__ID>
+			<span class=title__ID>Exploring the links between poor sleep, memory impairment and cognitive decline</span>
+			<br><span class=type__ID>SLEEP RESEARCH</span>
+			<br><button class="btn btn-secondary open__ID">View Details</button>
+			<div class=content__ID style='display:none'>
+				VmInclude:__CURRENT_PATH__project-02.html
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function F__ID(){
+        //----------------------------------------
+		$('span.title__ID').on('click',function(){
+			if($(this).parent().find('div.content__ID').css('display')!='block'){
+				$(this).parent().find('div.content__ID').show();
+				$(this).parent().find('button.open__ID').hide();
+			}
+			else{
+				$(this).parent().find('div.content__ID').hide();
+				$(this).parent().find('button.open__ID').show();
+			}
+		})
+		//----------------------------------------
+		$('button.open__ID').on('click',function(){
+			$(this).next('div').show();
+			$(this).hide();
+		})
+		//----------------------------------------
+		$('button.close__ID').on('click',function(){
+			$(this).closest('div.content__ID').hide();
+			$(this).closest('div.project__ID').find('button.open__ID').show();
+		})
+		//----------------------------------------
+		$('button.apply__ID').on('click',function(){
+			$vm.load_module_v2('pages_registration',"",{});
+		})
+		//----------------------------------------
+	}
+</script>
+<style>
+	#D__ID{
+		height:100%;
+        overflow:auto;
+		animation: vm_module_fadein 1.0s;
+		background-color: #fff;
+		padding-top:30px;
+	}
+	#page__ID{
+		color:#555;
+        /*color:#333F48;*/
+		height:100%;
+		/*display: flex;*/
+		/*align-items: center;*/
+	}
+	#hr__ID{
+		border-top:1px solid #c76c59;
+	}
+	#a1__ID{
+		cursor:pointer;
+	}
+	#a1__ID:hover{
+		color:#a74c39;
+	}
+	#a2__ID{
+		cursor:pointer;
+	}
+	.title__ID{
+		font-size:130%;
+		font-weight: bold;
+		cursor:pointer;
+	}
+	.title__ID:hover{
+		color:#333F48;
+	}
+	.type__ID{
+		font-size:70%;
+		padding:3px 10px;
+		display:inline-block;
+		border:1px solid #888;
+		margin-bottom:10px;
+	}
+	.project__ID{
+		padding:10px;
+		border:1px solid #eee;
+		background-color: #fafafa;
+		margin-bottom:15px;
+	}
+	.content__ID{
+		padding:10px 0;
+	}
+</style>
